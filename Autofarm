@@ -1,0 +1,141 @@
+-- Create a function to handle button clicks
+local function buttonClick(buttonName)
+    if buttonName == "Button1" then
+        loadstring(game:HttpGet("https://raw.githubusercontent.com/Justanotherdme/scripts/main/ps99Visual.lua"))()
+    elseif buttonName == "Button4" then
+        repeat task.wait() until game:IsLoaded()
+        loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/Extras/Global'))()
+
+        local StartTime = tick()
+        local A = loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.G-Hub-Games-List'))()
+
+        local ScreenGui = Instance.new('ScreenGui')
+        if syn and syn.protect_gui then
+            syn.protect_gui(ScreenGui)
+            ScreenGui.Parent = CoreGui
+        elseif gethui then
+            ScreenGui.Parent = gethui()
+        else
+            ScreenGui.Parent = CoreGui
+        end
+
+        local ImageLabel = Instance.new('ImageLabel')
+        ImageLabel.Parent = ScreenGui
+        ImageLabel.BackgroundColor3 = Color3.new(1, 1, 1)
+        ImageLabel.BackgroundTransparency = 1
+        ImageLabel.Position = UDim2.new(0.5, -(303 / 2), 0.5, -(263 / 2))
+        ImageLabel.Rotation = 0
+        ImageLabel.Size = UDim2.new(0, 303, 0, 263)
+        ImageLabel.Image = 'rbxassetid://8429081004'
+        ImageLabel.ImageTransparency = 1
+
+        for Index = 1, 50, 2 do
+            ImageLabel.ImageTransparency = ImageLabel.ImageTransparency - 0.1
+            wait()
+        end
+        ScreenGui:Destroy()
+
+        for i, v in next, A do
+            if i == game.GameId or i == game.PlaceId then
+                loadstring(game:HttpGet(v))()
+            end
+        end
+
+        print('Took ', tick() - StartTime, ' To Load <3')
+
+        local function Copy()
+            setclipboard('https://discord.gg/HUBfmJUA2H')
+        end
+
+        local Gang = Instance.new('BindableFunction')
+
+        function Gang.OnInvoke(v)
+            if v == 'Yes' then
+                Copy()
+                VG.SendNotification('Discord', 'Discord Link Copying Successful', 'rbxassetid://8429081004', 15)
+            end
+        end
+
+        StarterGui:SetCore('SendNotification', {Title = 'V.G Hub Discord', Text = 'Copy to clipboard?', Duration = 5, Callback = Gang, Button1 = 'Yes', Button2 = 'No'})
+        wait(5)
+
+        local function Copy()
+            setclipboard('https://www.youtube.com/@SirMemeV2')
+        end
+
+        local Gang = Instance.new('BindableFunction')
+
+        function Gang.OnInvoke(v)
+            if v == 'Yes' then
+                Copy()
+                VG.SendNotification('Sirmemes youtube', 'Copying of Sirmemes youtube successful', 'rbxassetid://8429081004', 15)
+            end
+        end
+
+        StarterGui:SetCore('SendNotification', {Title = 'Sirmemes youtube', Text = 'Copy to clipboard?', Duration = 5, Callback = Gang, Button1 = 'Yes', Button2 = 'No'})
+
+        queue_on_teleport([[loadstring(game:HttpGet('https://raw.githubusercontent.com/1201for/V.G-Hub/main/V.Ghub'))()]])
+    end
+end
+
+-- Create a ScreenGui to hold all the elements
+local screenGui = Instance.new("ScreenGui")
+screenGui.Name = "MainGui"
+screenGui.Parent = game.Players.LocalPlayer.PlayerGui
+
+-- Create a Frame to hold all the elements
+local frame = Instance.new("Frame")
+frame.Name = "MainFrame"
+frame.Size = UDim2.new(0, 250, 0, 200)
+frame.Position = UDim2.new(0.5, -125, 0.5, -100)
+frame.BackgroundTransparency = 0.5
+frame.BackgroundColor3 = Color3.fromRGB(255, 255, 255)
+frame.BorderSizePixel = 0
+frame.Active = true
+frame.Draggable = true
+frame.Visible = false
+frame.Parent = screenGui
+
+-- Create a Title
+local title = Instance.new("TextLabel")
+title.Name = "Title"
+title.Text = "Pet Simulator 99 Script by PS99SCRIPTGIVER"
+title.Size = UDim2.new(0, 250, 0, 30)
+title.Position = UDim2.new(0, 0, 0, 0)
+title.BackgroundColor3 = Color3.fromRGB(255, 170, 85)
+title.Parent = frame
+
+-- Create buttons
+local button1 = Instance.new("TextButton")
+button1.Name = "Button1"
+button1.Text = "Pet Changer"
+button1.Size = UDim2.new(0, 200, 0, 50)
+button1.Position = UDim2.new(0.5, -100, 0.2, 0)
+button1.BackgroundColor3 = Color3.fromRGB(255, 170, 85)
+button1.Parent = frame
+button1.MouseButton1Click:Connect(function()
+    buttonClick("Button1")
+end)
+
+local button4 = Instance.new("TextButton")
+button4.Name = "Button4"
+button4.Text = "Autofarm GUI"
+button4.Size = UDim2.new(0, 200, 0, 50)
+button4.Position = UDim2.new(0.5, -100, 0.8, 0)
+button4.BackgroundColor3 = Color3.fromRGB(255, 170, 85)
+button4.Parent = frame
+button4.MouseButton1Click:Connect(function()
+    buttonClick("Button4")
+end)
+
+-- Create a button to toggle the visibility of the GUI
+local toggleButton = Instance.new("TextButton")
+toggleButton.Name = "ToggleButton"
+toggleButton.Text = "Toggle GUI"
+toggleButton.Size = UDim2.new(0, 100, 0, 30)
+toggleButton.Position = UDim2.new(0.5, -50, 1, -30)
+toggleButton.BackgroundColor3 = Color3.fromRGB(255, 170, 85)
+toggleButton.Parent = screenGui
+toggleButton.MouseButton1Click:Connect(function()
+    frame.Visible = not frame.Visible
+end)
